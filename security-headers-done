@@ -1,0 +1,28 @@
+$ nosetests -v --with-spec --spec-color
+
+Account API Service Test Suite
+...
+
+test_index (tests.test_routes.TestAccountService.test_index) ... ok
+test_health (tests.test_routes.TestAccountService.test_health) ... ok
+test_create_account (tests.test_routes.TestAccountService.test_create_account) ... ok
+test_bad_request (tests.test_routes.TestAccountService.test_bad_request) ... ok
+test_unsupported_media_type (tests.test_routes.TestAccountService.test_unsupported_media_type) ... ok
+test_cors_headers (tests.test_routes.TestAccountService.test_cors_headers) ... ok
+
+test_account_model_creation (tests.test_models.TestAccountModel.test_account_model_creation) ... ok
+test_account_model_update (tests.test_models.TestAccountModel.test_account_model_update) ... ok
+test_account_model_delete (tests.test_models.TestAccountModel.test_account_model_delete) ... ok
+test_account_model_list (tests.test_models.TestAccountModel.test_account_model_list) ... ok
+test_account_model_deserialize (tests.test_models.TestAccountModel.test_account_model_deserialize) ... ok
+
+test_cli_help (tests.test_cli_commands.TestCLICommands.test_cli_help) ... ok
+test_cli_list (tests.test_cli_commands.TestCLICommands.test_cli_list) ... ok
+test_cli_create (tests.test_cli_commands.TestCLICommands.test_cli_create) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.921s
+
+OK
+
+Accounts service tests: all passing after implementing CORS policies and security headers.
