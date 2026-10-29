@@ -10,17 +10,16 @@ on:
 
 jobs:
   build:
-    name: Lint and Test
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.9"
 
       - name: Install dependencies
         run: |
@@ -28,10 +27,8 @@ jobs:
           pip install -r requirements.txt
           pip install flake8 nose
 
-      - name: Lint code
-        run: |
-          flake8 service tests
+      - name: Lint with flake8
+        run: flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
 
-      - name: Run unit tests
-        run: |
-          nosetests
+      - name: Run unit tests with nose
+        run: nosetests
